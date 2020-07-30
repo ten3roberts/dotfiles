@@ -1,0 +1,11 @@
+[Nemo Action]
+
+Name=Open with Emacs
+
+Exec=ec %F
+
+Selection=any
+
+Icon-Name=emacs
+
+Extensions=any
