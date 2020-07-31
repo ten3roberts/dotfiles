@@ -2,7 +2,7 @@
 *
 
 # Whitelist directories
-!*/
+!.config/
 
 # But not -
 !.gitignore
