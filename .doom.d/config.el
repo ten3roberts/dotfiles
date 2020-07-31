@@ -115,3 +115,5 @@
 ;;     (if (get-buffer buffer-name)
 ;;         (pop-to-buffer buffer-name)
 ;;       (pop-to-buffer (get-buffer-create buffer-name))
+
+(evil-ex-define-cmd "W" #'evil-write-all)
