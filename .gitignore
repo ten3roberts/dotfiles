@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Whitelist directories
+!*/
+
+# But not -
+!.gitignore
+!/**/zsh/.zshrc
+!/**/bspwm/
+!/**/sxhkd/
+!/**/polybar/
+!/**/ckb-next/
+!/**/rofi/
+!/**/kitty/
+!/**/Code/User/keybindings.json
+!/**/Code/User/settings.json
