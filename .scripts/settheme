@@ -1,0 +1,29 @@
+#!/bin/sh
+
+[ -z "$1" ] && wal --theme | fzf | awk '{print $2}' | xargs -r $0 && exit
+echo "Args: $@"
+
+[ "$1" == "-R" ] && wal -R
+
+# Set theme
+wal -n --theme $@ || wal -n --theme $@ -l
+
+# Regenerate colors for bspwm
+getcolors () {
+            FOREGROUND=$(xrdb -query | grep 'foreground:' -m 1 | awk '{print $NF}')
+            BACKGROUND=$(xrdb -query | grep 'background:' -m 1 | awk '{print $NF}')
+            BLACK=$(xrdb -query | grep 'color0:' -m 1 | awk '{print $NF}')
+            RED=$(xrdb -query | grep 'color1:' -m 1 | awk '{print $NF}')
+            GREEN=$(xrdb -query | grep 'color2:' -m 1 | awk '{print $NF}')
+            YELLOW=$(xrdb -query | grep 'color3:' -m 1 | awk '{print $NF}')
+            BLUE=$(xrdb -query | grep 'color4:' -m 1 | awk '{print $NF}')
+            MAGENTA=$(xrdb -query | grep 'color5:' -m 1 | awk '{print $NF}')
+            CYAN=$(xrdb -query | grep 'color6:' -m 1 | awk '{print $NF}')
+            WHITE=$(xrdb -query | grep 'color7:' -m 1 | awk '{print $NF}')
+}
+
+getcolors
+
+bspc config focused_border_color "$RED"
+bspc config active_border_color "$BLUE"
+bspc config presel_feedback_color "$MAGENTA"
