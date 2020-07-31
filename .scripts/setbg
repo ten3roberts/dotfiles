@@ -3,5 +3,9 @@
 # Set the background
 [ -z "$1" ] && ls $HOME/.config/wallpapers -1 | fzf | xargs -r $0 && exit
 [ "$1" == "-R" ] && ~/.fehbg && exit
+
+[ "$1" == "-R" ] && $HOME/.fehbg
+
 feh --bg-fill "$HOME/.config/wallpapers/$1"
 
+ 

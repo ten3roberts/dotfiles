@@ -6,7 +6,7 @@ echo "Args: $@"
 [ "$1" == "-R" ] && wal -R
 
 # Set theme
-wal -n --theme $@ || wal -n --theme $@ -l
+wal --theme $@ 
 
 # Regenerate colors for bspwm
 getcolors () {
