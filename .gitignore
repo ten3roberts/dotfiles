@@ -13,5 +13,15 @@
 !/**/ckb-next/
 !/**/rofi/
 !/**/kitty/
+!/**/.scripts/
 !/**/Code/User/keybindings.json
 !/**/Code/User/settings.json
+!/**/picom/
+
+!/**/bspwm/*
+!/**/sxhkd/*
+!/**/polybar/*
+!/**/ckb-next/*
+!/**/rofi/*
+!/**/kitty/*
+!/**/picom/*

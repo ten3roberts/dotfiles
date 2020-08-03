@@ -6,7 +6,7 @@ rustup update &
 # Default programs
 export BROWSER="firefox"
 export TERMINAL="kitty"
-export EDITOR="vim"
+export EDITOR="ec"
 export VISUAL="ec"
 
 export PATH=$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$PATH

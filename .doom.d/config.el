@@ -74,7 +74,9 @@
 
 (map! :n "SPC r r" 'rustic-cargo-run)
 (map! :n "SPC r b" 'rustic-cargo-build)
-(map! :n "SPC r t" 'Rustic_Cargo_Test)
+(map! :n "SPC r t" 'rustic-cargo-test)
+(defun cargo-test-output () (rustic-cargo-test))
+(map! :n "SPC r o" 'cargo-test-output)
 (map! :n "SPC r c" 'rustic-cargo-check)
 (map! :n "SPC r i" 'lsp-rust-analyzer-inlay-hints-mode)
 
@@ -84,6 +86,7 @@
     (:map dired-mode-map
      "C-x i" #'peep-dired
      )))
+
 (evil-define-key 'normal peep-dired-mode-map (kbd "j") 'peep-dired-next-file
                                              (kbd "k") 'peep-dired-prev-file)
 (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
@@ -117,3 +120,5 @@
 ;;       (pop-to-buffer (get-buffer-create buffer-name))
 
 (evil-ex-define-cmd "W" #'evil-write-all)
+;; Remap :q to quit buffer and not window
+(evil-ex-define-cmd "q" #'kill-current-buffer)
